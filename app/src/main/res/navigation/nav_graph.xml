@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/fragmentA">
+
+    <fragment
+        android:id="@+id/fragmentA"
+        android:name="com.masslany.deeplinkworkmanager.FragmentA"
+        android:label="FragmentA"
+        tools:layout="@layout/fragment_a_layout">
+        <action
+            android:id="@+id/action_fragmentA_to_fragmentB"
+            app:destination="@id/fragmentB" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentB"
+        android:name="com.masslany.deeplinkworkmanager.FragmentB"
+        android:label="FragmentB"
+        tools:layout="@layout/fragment_b_layout">
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="xbc://details/{id}" />
+    </fragment>
+</navigation>
