@@ -19,6 +19,8 @@ class NotificationHelper(
          * Because you must create the notification channel before posting any notifications on Android 8.0 and higher,
          * you should execute this code as soon as your app starts.
          * It's safe to call this repeatedly because creating an existing notification channel performs no operation.
+         *
+         * source: https://developer.android.com/training/notify-user/build-notification
          * */
 
         fun createNotificationChannel(context: Context) {
@@ -40,6 +42,7 @@ class NotificationHelper(
     }
 
     fun sendNotification(id: String, name: String) {
+        // Todo: Handle clicking event (intent with deeplink)
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_launcher_background)
             .setContentTitle(name)
